@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e2e2e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    padding: 25px 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-app h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+/* Input Row Styling */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ededed;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #e04b3a;
+}
+
+/* List Styling */
+#list-container li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Custom Checkmark (Invisible by default) */
+#list-container li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png); /* You'll need to use a font icon or an image */
+    background-size: cover;
+    background-position: center;
+    top: 10px;
+    left: 8px;
+}
+
+/* Checked/Completed State */
+#list-container li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+/* Custom Checkmark (Visible when checked) */
+#list-container li.checked::before {
+    background-image: url(images/checked.png); /* You'll need to use a font icon or an image */
+}
+
+/* Delete Button (Close 'x') */
+#list-container li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+#list-container li span:hover {
+    background: #ededed;
+}
+
+/* Optional: Placeholder styles if you don't use images */
+#list-container li::before {
+    content: "\25A1"; /* Square icon */
+    font-size: 24px;
+    color: #888;
+    background: none;
+    top: 12px;
+}
+
+#list-container li.checked::before {
+    content: "\2713"; /* Checkmark icon */
+    color: #008000;
+}
